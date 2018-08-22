@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 const xml = require('xml');
+const program = require('commander');
 
 const manifest = require('./lib/manifest');
 const inquirer = require('./lib/inquirer');
@@ -38,5 +39,12 @@ const run = async () => {
     }
   }
 }
+
+
+program
+  .version('1.0.0')
+  .option('-p, --profile-name [value]', 'Profile name')
+  .option('-r, --remote-name [value]', 'Remote name')
+  .parse(process.argv);
 
 run();
