@@ -3,8 +3,8 @@
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
-
-const github = require('./lib/github');
+const xml = require('xml');
+const manifest = require('./lib/manifest');
 
 clear();
 console.log(
@@ -17,12 +17,9 @@ console.log(
 
 const run = async () => {
   try {
-    const data = await github.getGithubProjects();
-    console.log('Found some projects!');
-    
-    data.data.forEach(project => {
-      console.log('Project URL:', project.html_url);
-    });
+    const manif = await manifest.buildManifest();
+    console.log('manifest:', JSON.stringify(manif));
+
   } catch (err) {
     if (err) {
       switch (err.code) {
