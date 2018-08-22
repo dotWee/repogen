@@ -4,7 +4,9 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 const xml = require('xml');
+
 const manifest = require('./lib/manifest');
+const inquirer = require('./lib/inquirer');
 
 clear();
 console.log(
@@ -20,6 +22,10 @@ const run = async () => {
     const manif = await manifest.buildManifest();
     console.log('manifest:', JSON.stringify(manif));
 
+    const answer = await inquirer.askManifestFilename();
+    console.log('filename:', answer.filename);
+
+    xml_write(manif, answer.filename);
   } catch (err) {
     if (err) {
       switch (err.code) {
