@@ -8,6 +8,7 @@ const program = require('commander');
 
 const manifest = require('./lib/manifest');
 const inquirer = require('./lib/inquirer');
+const helper = require('./lib/helper');
 
 clear();
 console.log(
@@ -26,7 +27,7 @@ const run = async () => {
     const answer = await inquirer.askManifestFilename();
     console.log('filename:', answer.filename);
 
-    xml_write(manif, answer.filename);
+    helper.xml_write(manif, answer.filename);
   } catch (err) {
     if (err) {
       switch (err.code) {
