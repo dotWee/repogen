@@ -1,21 +1,21 @@
 {
-  "name": "github_repo-gen",
+  "name": "repogen",
   "version": "1.0.0",
-  "description": "Generate repo manifest using projects from GitHub's API",
+  "description": "Generate repo manifest using projects from GitHub or GitLab",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotWee/github_repo-gen.git"
+    "url": "git+https://github.com/dotWee/repogen.git"
   },
   "author": "Lukas Wolfsteiner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dotWee/github_repo-gen/issues"
+    "url": "https://github.com/dotWee/repogen/issues"
   },
-  "homepage": "https://github.com/dotWee/github_repo-gen#readme",
+  "homepage": "https://github.com/dotWee/repogen#readme",
   "dependencies": {
     "@octokit/rest": "^15.10.0",
     "chalk": "^2.4.1",

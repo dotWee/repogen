@@ -13,7 +13,7 @@ const helper = require('./lib/helper');
 clear();
 console.log(
   chalk.white(
-    figlet.textSync('github_repo-gen', {
+    figlet.textSync('repogen', {
       horizontalLayout: 'full'
     })
   )
