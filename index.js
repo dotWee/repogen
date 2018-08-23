@@ -24,10 +24,7 @@ const run = async () => {
     const manif = await manifest.buildManifest();
     console.log('manifest:', JSON.stringify(manif));
 
-    const answer = await inquirer.askManifestFilename();
-    console.log('filename:', answer.filename);
-
-    helper.xml_write(manif, answer.filename);
+    await manifest.writeToFile(manif);
   } catch (err) {
     if (err) {
       switch (err.code) {
@@ -46,6 +43,7 @@ program
   .version('1.0.0')
   .option('-p, --profile-name [value]', 'Profile name')
   .option('-r, --remote-name [value]', 'Remote name')
+  .option('-o, --output-file [value]', 'File name')
   .parse(process.argv);
 
 run();
