@@ -9,6 +9,7 @@ const program = require('commander');
 const manifest = require('./lib/provider/manifest');
 const inquirer = require('./lib/inquirer');
 const helper = require('./lib/helper');
+const gitlab = require('./lib/provider/gitlab/gitlab');
 
 clear();
 console.log(
@@ -26,14 +27,19 @@ const run = async () => {
 
         await manifest.writeToFile(manif);
     } catch (err) {
-        if (err) {
-            switch (err.code) {
-                case 404:
-                    console.log('This GitHub profile doesnt exist!');
-                    break;
-                default:
-                    console.log(err);
-            }
+        let code;
+        if (err.code) {
+            code = err.code;
+        } else if (err.statusCode) {
+            code = err.statusCode;
+        }
+
+        switch (code) {
+            case 404:
+                console.log('This profile doesnt exist!');
+                break;
+            default:
+                console.log(err);
         }
     }
 }
