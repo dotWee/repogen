@@ -6,7 +6,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/dotWee/repogen.svg)](https://github.com/dotWee/repogen/issues)
 [![GitHub license](https://img.shields.io/github/license/dotWee/repogen.svg)](https://github.com/dotWee/repogen/blob/develop/LICENSE)
 
-
 Repogen is meant as an utility for [Repo](https://code.google.com/archive/p/git-repo/) project. It generates repo-manifests from several Git hosts, like GitHub, GitLab and Gitea.
 
 About repo:
@@ -20,7 +19,9 @@ See Google's [Repo command reference](https://source.android.com/setup/develop/r
 
 - [Installation](##Installation)
 - [Execution](##Execution)
+  - [Commands](###Commands)
   - [Example](###Example)
+- [Repohosts](##Repohosts)
   - [GitHub](###GitHub)
   - [GitLab](###GitLab)
   - [Gitea](###Gitea)
@@ -35,11 +36,7 @@ See Google's [Repo command reference](https://source.android.com/setup/develop/r
 
 ## Execution
 
-Currently there are three different git-hosts supported:
-
-- [GitHub](###GitHub)
-- [GitLab](###GitLab)
-- [Gitea](###Gitea)
+### Commands
 
 ```shell
 $ repogen -h
@@ -77,11 +74,18 @@ $ cat manifest-dotwee.xml
         sync-j="4"/>
 
     <project name="repogen" path="repogen" remote="origin"/>
-    
     ...
 
 </manifest>
 ```
+
+## Repohosts
+
+Currently there are three different git-hosts supported:
+
+- [GitHub](###GitHub)
+- [GitLab](###GitLab)
+- [Gitea](###Gitea)
 
 ### GitHub
 
