@@ -6,10 +6,10 @@ const figlet = require('figlet');
 const xml = require('xml');
 const program = require('commander');
 
-const manifest = require('./lib/provider/manifest');
+const manifest = require('./lib/manifest');
 const inquirer = require('./lib/inquirer');
 const helper = require('./lib/helper');
-const gitlab = require('./lib/provider/gitlab/gitlab');
+const gitlab = require('./lib/provider/gitlab');
 
 clear();
 console.log(
