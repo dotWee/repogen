@@ -1,5 +1,12 @@
 # repogen
 
+[![npm @latest](https://img.shields.io/npm/v/repogen.svg)](https://www.npmjs.com/package/repogen)
+[![npm downloads](https://img.shields.io/npm/dt/repogen.svg)](https://www.npmjs.com/package/repogen)
+[![dependencies Status](https://david-dm.org/dotwee/repogen/status.svg)](https://david-dm.org/dotwee/repogen)
+[![GitHub issues](https://img.shields.io/github/issues/dotWee/repogen.svg)](https://github.com/dotWee/repogen/issues)
+[![GitHub license](https://img.shields.io/github/license/dotWee/repogen.svg)](https://github.com/dotWee/repogen/blob/develop/LICENSE)
+
+
 Repogen is meant as an utility for [Repo](https://code.google.com/archive/p/git-repo/) project. It generates repo-manifests from several Git hosts, like GitHub, GitLab and Gitea.
 
 About repo:
@@ -13,10 +20,10 @@ See Google's [Repo command reference](https://source.android.com/setup/develop/r
 
 - [Installation](##Installation)
 - [Execution](##Execution)
-    - [Example](###Example)
-    - [GitHub](###GitHub)
-    - [GitLab](###GitLab)
-    - [Gitea](###Gitea)
+  - [Example](###Example)
+  - [GitHub](###GitHub)
+  - [GitLab](###GitLab)
+  - [Gitea](###Gitea)
 - [Configuration](##Configuration)
 - [Todo](##Todo)
 - [License](##License)
