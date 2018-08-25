@@ -18,60 +18,69 @@ console.log(
     )
 );
 
-const run = async () => {
+const run = async (provider, options) => {
     try {
-        const answersMain = await inquirer.askProjectsProvider();
-        let provider;
+        let xmlManifest = new manifest();
+        
+        let projects = await provider.getProjects(xmlManifest, options);        
+        xmlManifest.addProjects(projects);
 
-        if (answersMain.provider === 'Gitea') {
-            provider = require('./lib/provider/gitea');
-        } else if (answersMain.provider === 'GitHub') {
-            provider = require('./lib/provider/github');
-        } else {
-            provider = require('./lib/provider/gitlab');
-        }
-
-        let manif = new manifest();
-        let answersData = await provider.askForData();
-
-        let projects = await provider.getProjects(manif, answersData);
-        manif.addProjects(projects);
-
-        let fileName = await inquirer.getOrAskForOutputFile();
-        helper.writeFile(manif.toXml(), fileName);
+        let outputFile = await inquirer.getOrAskForOutputFile(options);
+        helper.writeFile(xmlManifest.toXml(), outputFile);
     } catch (err) {
-        let code;
-
-        if (err.code) {
-            code = err.code;
-        } else if (err.statusCode) {
-            code = err.statusCode;
-        }
-
-        switch (code) {
-            case 404:
-                console.log('This profile doesnt exist!');
-                break;
-            default:
-                console.log(err);
-        }
+        console.log(err);
     }
 };
 
 program
-    .command('gitea <profile>', 'generate manifest for a Gitea profile')
-    .option('-u, --url <url>', 'required url where Gitea is hosted')
-    .option('-e, --gitea_token <token>', 'required access-token to allow Gitea API calls');
+    .command('gitea')
+    .description('generate manifest from authenticated gitea user')
+    .option('-a, --access_token <access_token>', 'required access-token to allow api calls')
+    .option('-o, --output-file [output_file]', 'name of the output file')
+    .option('-u, --url <url>', 'required url or ip address of the host')
+    .action((profile, args) => {
+        let access_token = args.access_token;
+        if (!access_token) {
+            console.error('Error: The access-token is missing.');
+            process.exit(1);
+        }
+
+        let url = args.url;
+        if (!url) {
+            console.error('Error: The url is missing.');
+            process.exit(1);
+        }
+
+        args.profile = profile;
+        run(require('./lib/provider/gitea'), args);
+    });
 
 program
-    .command('github <profile>', 'generate manifest for a GitHub profile')
-    .option('-u, --github_token [token]', 'optional auth-token to include private repositories');
+    .command('github <profile>')
+    .description('generate manifest from github profile')
+    .option('-o, --output-file [output_file]', 'name of the output file')
+    .option('-t, --token [token]', 'optional auth-token to include private repositories')
+    .action((profile, args) => {
+        args.profile = profile;
+        run(require('./lib/provider/github'), args);
+    });
 
 program
-    .command('gitlab <profile>', 'generate manifest for a GitLab profile')
-    .option('-a, --gitlab_token [token]', 'optional auth-token to include private repositories');
+    .command('gitlab <profile>')
+    .description('generate manifest from gitlab profile')
+    .option('-t, --token [token]', 'optional auth-token to include private repositories')
+    .option('-o, --output-file [output_file]', 'name of the output file')
+    .option('-u, --url [url]', 'optional url or ip address of running gitlab instance')
+    .action((profile, args) => {
+        args.profile = profile;
+        run(require('./lib/provider/gitlab'), args);
+    });
 
-// allow commander to parse `process.argv`
+program
+    .command('*')
+    .action(function () {
+        console.error('Invalid command.\nSee --help for a list of available commands.');
+        process.exit(1);
+    });
+
 program.parse(process.argv);
-
-run();
