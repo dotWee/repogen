@@ -1,16 +1,19 @@
 {
   "name": "repogen",
-  "version": "1.0.0",
-  "description": "Generate repo manifest using projects from GitHub or GitLab",
+  "version": "0.1.0",
+  "description": "Generate repo manifests from github, gitlab and gitea",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotWee/repogen.git"
+    "url": "https://github.com/dotWee/repogen.git"
   },
-  "author": "Lukas Wolfsteiner",
+  "bin": {
+    "repogen": "./index.js"
+  },
+  "author": "Lukas Wolfsteiner <lukas@dotwee.de>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dotWee/repogen/issues"

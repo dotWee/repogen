@@ -32,6 +32,8 @@ const run = async (provider, options) => {
     }
 };
 
+program.version(helper.getPackageVersion());
+
 program
     .command('gitea')
     .description('generate manifest from authenticated gitea user')
