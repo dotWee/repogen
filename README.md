@@ -1,1 +1,1 @@
-# github_repo-gen
+# repogen
