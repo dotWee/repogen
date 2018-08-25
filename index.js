@@ -36,7 +36,7 @@ program.version(helper.getPackageVersion());
 
 program
     .command('gitea')
-    .description('generate manifest from authenticated gitea user')
+    .description('Generate manifest from the authenticated gitea user')
     .option('-a, --access_token <access_token>', 'required access-token to allow api calls')
     .option('-o, --output-file [output_file]', 'name of the output file')
     .option('-u, --url <url>', 'required url or ip address of the host')
@@ -59,7 +59,7 @@ program
 
 program
     .command('github <profile>')
-    .description('generate manifest from github profile')
+    .description('Generate manifest from github a given profile')
     .option('-o, --output-file [output_file]', 'name of the output file')
     .option('-t, --token [token]', 'optional auth-token to include private repositories')
     .action((profile, args) => {
@@ -69,7 +69,7 @@ program
 
 program
     .command('gitlab <profile>')
-    .description('generate manifest from gitlab profile')
+    .description('Generate manifest from a given gitlab profile')
     .option('-t, --token [token]', 'optional auth-token to include private repositories')
     .option('-o, --output-file [output_file]', 'name of the output file')
     .option('-u, --url [url]', 'optional url or ip address of running gitlab instance')
