@@ -56,14 +56,22 @@ const run = async () => {
                 console.log(err);
         }
     }
-}
-
+};
 
 program
-    .version('1.0.0')
-    .option('-p, --profile-name [value]', 'Profile name')
-    .option('-r, --remote-name [value]', 'Remote name')
-    .option('-o, --output-file [value]', 'File name')
-    .parse(process.argv);
+    .command('gitea <profile>', 'generate manifest for a Gitea profile')
+    .option('-u, --url <url>', 'required url where Gitea is hosted')
+    .option('-e, --gitea_token <token>', 'required access-token to allow Gitea API calls');
+
+program
+    .command('github <profile>', 'generate manifest for a GitHub profile')
+    .option('-u, --github_token [token]', 'optional auth-token to include private repositories');
+
+program
+    .command('gitlab <profile>', 'generate manifest for a GitLab profile')
+    .option('-a, --gitlab_token [token]', 'optional auth-token to include private repositories');
+
+// allow commander to parse `process.argv`
+program.parse(process.argv);
 
 run();
