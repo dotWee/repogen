@@ -1,0 +1,23 @@
+{
+    // Remote configuration
+    "Remote": {
+      "name": "",
+      "alias": "",
+      "fetch": "",
+      "pushurl": "",
+      "review": "",
+      "revision": ""
+    },
+
+    // Manifest configuration
+    "Default": {
+        "remote": "",
+        "revision": "",
+        "dest-branch": "",
+        "upstream": "",
+        "sync-j": "",
+        "sync-c": "",
+        "sync-s": "",
+        "sync-tags": ""
+      }
+  }
