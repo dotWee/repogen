@@ -1,0 +1,12 @@
+{
+    // Remote configuration
+    "Remote": {
+      "name": "origin"
+    },
+
+    "Default": {
+        "remote": "origin",
+        "revision": "refs/heads/master",
+        "sync-j": "4"
+      }
+  }
