@@ -31,6 +31,7 @@
     "jshint": "^2.9.6",
     "lodash": "^4.17.10",
     "minimist": "^1.2.0",
+    "node-fetch": "^2.2.0",
     "simple-git": "^1.96.0",
     "touch": "^3.1.0",
     "xml": "^1.0.1"
