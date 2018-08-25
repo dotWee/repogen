@@ -1,6 +1,5 @@
 {
-    // Remote configuration
-    "Remote": {
+    "_remote": {
       "name": "",
       "alias": "",
       "fetch": "",
@@ -9,8 +8,7 @@
       "revision": ""
     },
 
-    // Manifest configuration
-    "Default": {
+    "_default": {
         "remote": "",
         "revision": "",
         "dest-branch": "",

@@ -1,11 +1,11 @@
 {
   "outputFile": "default.xml",
 
-  "Remote": {
+  "_remote": {
     "name": "origin"
   },
 
-  "Default": {
+  "_default": {
     "remote": "origin",
     "revision": "refs/heads/master",
     "sync-j": "4"
