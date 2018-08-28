@@ -28,7 +28,7 @@ const run = async (provider, options) => {
         let outputFile = await inquirer.getOrAskForOutputFile(options);
         helper.writeFile(xmlManifest.toXml(), outputFile);
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 };
 
@@ -76,6 +76,16 @@ program
     .action((profile, args) => {
         args.profile = profile;
         run(require('./lib/provider/gitlab'), args);
+    });
+
+program
+    .command('url <url>')
+    .description('Generate manifest from url')
+    .option('-t, --token [token]', 'optional auth-token to include private repositories')
+    .option('-o, --output-file [output_file]', 'optional name of the output file')
+    .action((url, args) => {
+        args.url = url;
+        run(require('./lib/provider/url'), args);
     });
 
 program
