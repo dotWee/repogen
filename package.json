@@ -1,33 +1,41 @@
 {
-  "name": "github_repo-gen",
-  "version": "1.0.0",
-  "description": "Generate repo manifest using projects from GitHub's API",
+  "name": "repogen",
+  "version": "0.2.0",
+  "description": "Generate repo manifests from github, gitlab and gitea",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dotWee/github_repo-gen.git"
+    "url": "https://github.com/dotWee/repogen.git"
   },
-  "author": "Lukas Wolfsteiner",
+  "bin": {
+    "repogen": "./index.js"
+  },
+  "author": "Lukas Wolfsteiner <lukas@dotwee.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dotWee/github_repo-gen/issues"
+    "url": "https://github.com/dotWee/repogen/issues"
   },
-  "homepage": "https://github.com/dotWee/github_repo-gen#readme",
+  "homepage": "https://github.com/dotWee/repogen#readme",
   "dependencies": {
     "@octokit/rest": "^15.10.0",
+    "ajv": "^6.5.3",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
     "commander": "^2.17.1",
+    "config": "^2.0.1",
     "configstore": "^4.0.0",
+    "eslint": "^5.4.0",
     "figlet": "^1.2.0",
-    "inquirer": "^6.1.0",
+    "gitlab": "^3.11.2",
+    "inquirer": "^6.2.0",
     "jshint": "^2.9.6",
     "lodash": "^4.17.10",
     "minimist": "^1.2.0",
+    "node-fetch": "^2.2.0",
     "simple-git": "^1.96.0",
     "touch": "^3.1.0",
     "xml": "^1.0.1"
