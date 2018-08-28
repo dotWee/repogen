@@ -79,6 +79,16 @@ program
     });
 
 program
+    .command('url <url>')
+    .description('Generate manifest from url')
+    .option('-t, --token [token]', 'optional auth-token to include private repositories')
+    .option('-o, --output-file [output_file]', 'optional name of the output file')
+    .action((url, args) => {
+        args.url = url;
+        run(require('./lib/provider/url'), args);
+    });
+
+program
     .command('*')
     .action(function () {
         console.error('Invalid command.\nSee --help for a list of available commands.');
