@@ -28,7 +28,7 @@ const run = async (provider, options) => {
         let outputFile = await inquirer.getOrAskForOutputFile(options);
         helper.writeFile(xmlManifest.toXml(), outputFile);
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 };
 
