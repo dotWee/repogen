@@ -1,6 +1,6 @@
 {
   "name": "repogen",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Generate repo manifests from github, gitlab and gitea",
   "main": "index.js",
   "scripts": {
