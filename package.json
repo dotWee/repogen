@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/dotWee/repogen#readme",
   "dependencies": {
-    "@octokit/rest": "^15.18.0",
+    "@octokit/rest": "^15.18.3",
     "ajv": "^6.6.1",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
