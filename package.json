@@ -29,7 +29,7 @@
     "config": "^2.0.2",
     "configstore": "^4.0.0",
     "eslint": "^5.16.0",
-    "figlet": "^1.2.1",
+    "figlet": "^1.4.0",
     "gitlab": "^3.11.4",
     "inquirer": "^6.2.1",
     "jshint": "^2.9.6",
