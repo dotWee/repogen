@@ -25,7 +25,7 @@
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
-    "commander": "^2.19.0",
+    "commander": "^2.20.3",
     "config": "^2.0.2",
     "configstore": "^4.0.0",
     "eslint": "^5.9.0",
