@@ -33,7 +33,7 @@
     "gitlab": "^3.11.4",
     "inquirer": "^6.2.1",
     "jshint": "^2.9.6",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "minimist": "^1.2.0",
     "node-fetch": "^2.3.0",
     "simple-git": "^1.107.0",
