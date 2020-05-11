@@ -31,7 +31,7 @@
     "eslint": "^5.16.0",
     "figlet": "^1.2.1",
     "gitlab": "^3.11.4",
-    "inquirer": "^6.2.1",
+    "inquirer": "^6.5.2",
     "jshint": "^2.11.0",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
